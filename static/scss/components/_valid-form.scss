@@ -1,0 +1,93 @@
+.valid-form {
+	$grey: #333;
+
+	// * {
+	// 	-webkit-appearance: none;
+	// 	-moz-appearance: none;
+	// 	appearance: none;
+	// 	border-radius: 0;
+	// }
+
+	strong {
+		float: left;
+		color: $grey;
+		font-size: 30px;
+		line-height: 40px;
+		margin-right: 12px;
+		position: relative;
+	}
+
+	fieldset,
+	label,
+	.block {
+		display: block;
+	}
+
+	input[type="text"],
+	textarea,
+	select {
+		border: 3px solid $grey;
+		color: $grey;
+		font-size: 18px;
+		padding: 0 5px;
+		height: 40px;
+
+		border-radius: 0;
+		// -webkit-appearance: none;
+		// -moz-appearance: none;
+		// appearance: none;
+	}
+
+	legend,
+	label {
+		margin-bottom: 35px;
+	}
+
+	textarea {
+		display: block;
+		margin-top: 5px;
+		height: 115px;
+		width: 100%;
+		resize: none;
+	}
+
+	input[type="submit"] {
+		@extend %button;
+		display: block;
+		margin: 0 auto;
+		position: relative;
+		z-index: 2;
+		width: 150px;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	fieldset {
+		margin-bottom: 20px;
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	.message {
+		position: absolute;
+		display: block;
+		color: #D42020;
+		text-transform: none;
+		line-height: 21px;
+	}
+
+	.valid-select {
+
+		.message {
+			position: absolute;
+			width: 100%;
+			right: -100%;
+			font-size: 16px;
+			padding-left: 12px;
+		}
+	}
+}
