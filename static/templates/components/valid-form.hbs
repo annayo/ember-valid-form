@@ -1,0 +1,19 @@
+{{yield}}
+
+{{#if isSubmitting}}
+	<div class="loader">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+{{else}}
+	<input type="submit" value="Submit   &#9654;" />
+{{/if}}
+
+<div class="response">
+	<h2>Thank you for submitting.</h2>
+	<p>Please check your inbox for a verification email to finish your submission.</p>
+	<button class="reload" {{action "reload"}} data-track-category="Submission" data-track-action="Reload">Submit more work</button>
+</div>
