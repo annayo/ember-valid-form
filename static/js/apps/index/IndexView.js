@@ -1,1 +1,3 @@
-App.IndexView = Ember.View.extend();
+App.IndexView = Ember.View.extend({
+	classNames: ['index-view']
+});
