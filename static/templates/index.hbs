@@ -1,0 +1,67 @@
+{{#valid-form action="" method="post" enctype="multipart/form-data" autocomplete="off"}}
+	{{#valid-select}}
+		<strong>Choose an assignment:
+			{{#each view.messages}}
+				<em class="message">{{this}}</em>
+			{{/each}}
+		</strong>
+		{{view Ember.Select
+			content=options
+			prompt="Select One"
+			name="select_option"
+		}}
+	{{/valid-select}}
+	{{#valid-text class="block" validators="required:Forgot your name, alpha"}}
+		<strong>Name:</strong>
+		<span class="fill">{{input type="text" name="name" maxlength="255"}}
+			{{#each view.messages}}
+				<em class="message">{{this}}</em>
+			{{/each}}
+		</span>
+	{{/valid-text}}
+	{{#valid-text id="email" validators="required:Forgot your email, email"}}
+		<strong>E-mail Address:</strong>
+		<span class="fill">{{input type="text" name="email" maxlength="255"}}
+			{{#each view.messages}}
+				<em class="message">{{this}}</em>
+			{{/each}}
+		</span>
+	{{/valid-text}}
+	{{#valid-text validators="required:Forgot your zip, zip"}}
+		<strong>Zip Code:</strong>
+		<span class="fill">{{input type="text" name="zipcode" maxlength="5"}}
+			{{#each view.messages}}
+				<em class="message">{{this}}</em>
+			{{/each}}
+		</span>
+	{{/valid-text}}
+
+	{{#valid-checkbox class="checkbox-group" tagName="fieldset" validators="isChecked:Choose at least one"}}
+		<legend>What genre does it fall under? (check all that apply)
+			{{#each view.messages}}
+				<em class="message">{{this}}</em>
+			{{/each}}
+		</legend>
+		<label><input type="checkbox" name="checkbox-group" /> Checkbox group one</label>
+		<label><input type="checkbox" name="checkbox-group" /> Checkbox group two</label>
+		<label><input type="checkbox" name="checkbox-group" /> Checkbox group three</label>
+	{{/valid-checkbox}}
+
+	{{#valid-checkbox}}
+		<input type="checkbox" name="checkbox-two" /> Checkbox two
+		{{#each view.messages}}
+			<em class="message">{{this}}</em>
+		{{/each}}
+	{{/valid-checkbox}}
+
+	{{#valid-checkbox}}
+		<input type="checkbox" name="checkbox-three" /> Checkbox three
+		{{#each view.messages}}
+			<em class="message">{{this}}</em>
+		{{/each}}
+	{{/valid-checkbox}}
+
+	<label>
+		<input type="checkbox" name="checkbox-four" /> Checkbox four
+	</label>
+{{/valid-form}}
